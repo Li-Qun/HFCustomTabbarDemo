@@ -1,0 +1,31 @@
+//
+//  HFCustomTabbarDemo-Prefix.pch
+//  HFCustomTabbarDemo
+//
+//  Created by HF on 2018/9/4.
+//  Copyright © 2018年 HF. All rights reserved.
+//
+
+#ifndef HFCustomTabbarDemo_Prefix_pch
+#define HFCustomTabbarDemo_Prefix_pch
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define HorizontalFrom750(x)        (kScreenWidth /375.f*x)
+#define VerticalFrom750(y)          (kScreenHeight/667.f*y)
+
+#define Round_HorizontalFrom750(x)   round(HorizontalFrom750(x))
+#define Round_VerticalFrom750(y)     round(VerticalFrom750(y))
+
+//是否是 iPhoneX
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define tabbarBottomPadding  (kDevice_Is_iPhoneX ? 34 : 0) //tab 相对于底部 的安全距离
+#define tabbarHeight   49    //tab高度
+
+#import "Masonry.h"
+#import "UIView+YYAdd.h"
+#import "UIColor+YYAdd.h"
+#import "UIImage+YYAdd.h"
+
+#endif /* HFCustomTabbarDemo_Prefix_pch */
